@@ -15,7 +15,7 @@ export default function App() {
   const [filterMonth, setFilterMonth] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/salaries')
+    axios.get('https://salary-backend.onrender.com/api/salaries')
       .then(res => setSalaries(res.data));
   }, []);
 
@@ -25,7 +25,7 @@ export default function App() {
   };
 
   const handleAdd = () => {
-    axios.post('http://localhost:5000/api/salaries', form)
+    axios.post('https://salary-backend.onrender.com/api/salaries', form)
       .then(() => {
         setSalaries(prev => [...prev, form]);
         alert('Salary added!');
