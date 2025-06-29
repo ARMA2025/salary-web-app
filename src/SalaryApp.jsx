@@ -1,8 +1,8 @@
 
 import { useState } from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "./components/ui/card";
+import { Input } from "./components/ui/input";
+import { Button } from "./components/ui/button";
 
 const initialData = [
   {
@@ -45,10 +45,10 @@ export default function SalaryApp() {
   };
 
   return (
-    <div className="p-4 space-y-4">
+    <div style={{ padding: '1rem' }}>
       <Card>
-        <CardContent className="space-y-2">
-          <div className="grid grid-cols-3 gap-2">
+        <CardContent>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem' }}>
             {Object.keys(form).map(key => (
               <Input
                 key={key}
@@ -65,7 +65,7 @@ export default function SalaryApp() {
 
       {salaries.map((s, index) => (
         <Card key={index}>
-          <CardContent className="grid grid-cols-4 gap-2 p-2">
+          <CardContent style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', padding: '0.5rem' }}>
             <div>{s.id}</div>
             <div>{s.name}</div>
             <div>{s.month}</div>
